@@ -63,6 +63,12 @@ ADD_SUBDIRECTORY ( IexMath )
 ADD_SUBDIRECTORY ( Imath )
 ADD_SUBDIRECTORY ( IlmThread )
 
+set_target_properties(Half PROPERTIES FOLDER "ilmbase")
+set_target_properties(Iex PROPERTIES FOLDER "ilmbase")
+set_target_properties(IexMath PROPERTIES FOLDER "ilmbase")
+set_target_properties(Imath PROPERTIES FOLDER "ilmbase")
+set_target_properties(IlmThread PROPERTIES FOLDER "ilmbase")
+
 IF (WIN32)
   FILE ( WRITE  ${CMAKE_CURRENT_BINARY_DIR}/config/IlmBaseConfig.h "#ifdef HAVE_PTHREAD\n" )
   FILE ( APPEND ${CMAKE_CURRENT_BINARY_DIR}/config/IlmBaseConfig.h "# undef HAVE_PTHREAD\n" )
@@ -133,6 +139,10 @@ IF ( ENABLE_TESTS )
   ADD_SUBDIRECTORY ( HalfTest )
   ADD_SUBDIRECTORY ( IexTest )
   ADD_SUBDIRECTORY ( ImathTest )
+
+  set_target_properties(HalfTest PROPERTIES FOLDER "ilmbase/tests")
+  set_target_properties(IexTest PROPERTIES FOLDER "ilmbase/tests")
+  set_target_properties(ImathTest PROPERTIES FOLDER "ilmbase/tests")
 ENDIF ()
 
 # Installation

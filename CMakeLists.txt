@@ -76,12 +76,10 @@ endif()
 set(CMAKE_MACOSX_RPATH 1)
 set(BUILD_WITH_INSTALL_RPATH 1)
 
-# Packages
-find_package(ZLIB)
-if(BUILD_OPENEXR AND NOT ZLIB_FOUND)
-  message(WARNING "Make Zlib available to CMake's search path, and re-run configuration")
-  message(FATAL_ERROR "Zlib is a required dependency when BUILD_OPENEXR is set")
-endif()
+# Zlib dependency
+set(THIRD_PARTY_DEPS ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty)
+add_subdirectory(${THIRD_PARTY_DEPS}/zlib)
+set_target_properties(zlib PROPERTIES FOLDER "third-party")
 
 if (BUILD_PYTHON_LIBS)
   find_package(PythonLibs)

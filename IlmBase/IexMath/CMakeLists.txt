@@ -33,6 +33,8 @@ IF (BUILD_STATIC_LIBS)
     IexMathFpu.cpp
     )
 
+  set_target_properties(IexMath_static PROPERTIES FOLDER "ilmimf")
+  
   SET_TARGET_PROPERTIES ( IexMath_static
     PROPERTIES
     VERSION ${ILMBASE_VERSION_MAJOR}.${ILMBASE_VERSION_MINOR}.${ILMBASE_VERSION_PATCH}

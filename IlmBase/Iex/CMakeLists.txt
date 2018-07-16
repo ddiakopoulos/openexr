@@ -31,6 +31,8 @@ IF (BUILD_STATIC_LIBS)
     IexThrowErrnoExc.cpp
     )
 
+  set_target_properties(Iex_static PROPERTIES FOLDER "ilmimf")
+
   SET_TARGET_PROPERTIES ( Iex_static
     PROPERTIES
     VERSION ${ILMBASE_VERSION_MAJOR}.${ILMBASE_VERSION_MINOR}.${ILMBASE_VERSION_PATCH}

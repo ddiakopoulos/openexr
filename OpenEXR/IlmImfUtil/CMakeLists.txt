@@ -51,7 +51,6 @@ ENDIF()
 
 IF ( BUILD_STATIC_LIBS )
   LIST ( APPEND OPENEXR_LIB_TARGETS IlmImfUtil_static )
-
   ADD_LIBRARY ( IlmImfUtil_static STATIC ${ILMIMFUTIL_SRCS} )
 
   SET_TARGET_PROPERTIES ( IlmImfUtil_static
@@ -60,6 +59,9 @@ IF ( BUILD_STATIC_LIBS )
     SOVERSION ${OPENEXR_VERSION_MAJOR}
     OUTPUT_NAME "IlmImfUtil${OPENEXR_LIBSUFFIX}_s"
     )
+
+  set_target_properties(IlmImfUtil_static PROPERTIES FOLDER "ilmimf")
+  
 ENDIF()
 
 

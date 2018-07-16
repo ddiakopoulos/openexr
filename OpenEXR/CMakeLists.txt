@@ -120,6 +120,8 @@ ENDIF()
 ##########################
 ADD_SUBDIRECTORY ( IlmImf )
 
+set_target_properties(IlmImf PROPERTIES FOLDER "ilmimf")
+
 SET_TARGET_PROPERTIES ( IlmImf
   PROPERTIES
   VERSION ${OPENEXR_VERSION_MAJOR}.${OPENEXR_VERSION_MINOR}.${OPENEXR_VERSION_PATCH}
@@ -131,6 +133,8 @@ SET_TARGET_PROPERTIES ( IlmImf
 # IlmImfUtil library
 ##########################
 ADD_SUBDIRECTORY ( IlmImfUtil )
+
+set_target_properties(IlmImfUtil PROPERTIES FOLDER "ilmimf")
 
 SET_TARGET_PROPERTIES ( IlmImfUtil
   PROPERTIES
@@ -144,7 +148,7 @@ SET_TARGET_PROPERTIES ( IlmImfUtil
 ##########################
 ADD_SUBDIRECTORY ( IlmImfExamples )
 
-set_target_properties(IlmImfExamples PROPERTIES FOLDER "examples")
+set_target_properties(IlmImfExamples PROPERTIES FOLDER "ilmimf")
   
 ##########################
 # Tests
@@ -154,7 +158,7 @@ ADD_SUBDIRECTORY ( IlmImfUtilTest )
 ADD_SUBDIRECTORY ( IlmImfFuzzTest )
 
 set_target_properties(IlmImfTest PROPERTIES FOLDER "tests")
-set_target_properties(exrheader PROPERTIES FOLDER "tests")
+set_target_properties(IlmImfUtilTest PROPERTIES FOLDER "tests")
 set_target_properties(IlmImfFuzzTest PROPERTIES FOLDER "tests")
 
 ##########################

@@ -13,6 +13,10 @@ SET_SOURCE_FILES_PROPERTIES(
   )
 
 ADD_EXECUTABLE ( toFloat toFloat.cpp )
+
+set_target_properties(toFloat PROPERTIES FOLDER "ilmimf")
+set_target_properties(eLut PROPERTIES FOLDER "ilmimf")
+    
 ADD_CUSTOM_COMMAND(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
   COMMAND toFloat ARGS > ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
@@ -61,6 +65,8 @@ IF (BUILD_STATIC_LIBS)
   ADD_LIBRARY ( Half_static STATIC
     half.cpp
     )
+
+  set_target_properties(Half_static PROPERTIES FOLDER "ilmimf")
 
   SET_TARGET_PROPERTIES ( Half_static
     PROPERTIES

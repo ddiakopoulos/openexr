@@ -12,6 +12,8 @@ ADD_EXECUTABLE ( b44ExpLogTable
   b44ExpLogTable.cpp
 )
 
+set_target_properties(b44ExpLogTable PROPERTIES FOLDER "ilmimf")
+
 TARGET_LINK_LIBRARIES ( b44ExpLogTable
   IlmBase::Half
   IlmBase::IlmThread
@@ -26,8 +28,6 @@ IF (BUILD_SHARED_LIBS AND WIN32)
     TARGET_COMPILE_DEFINITIONS( b44ExpLogTable PUBLIC OPENEXR_DLL )
 ENDIF()
 
-
-
 ADD_CUSTOM_COMMAND (
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/b44ExpLogTable.h
   COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/b44ExpLogTable > ${CMAKE_CURRENT_BINARY_DIR}/b44ExpLogTable.h
@@ -38,6 +38,8 @@ ADD_CUSTOM_COMMAND (
 ADD_EXECUTABLE ( dwaLookups
   dwaLookups.cpp
 )
+
+set_target_properties(dwaLookups PROPERTIES FOLDER "ilmimf")
 
 IF (BUILD_SHARED_LIBS AND WIN32)
     TARGET_COMPILE_DEFINITIONS( dwaLookups PUBLIC OPENEXR_DLL )
@@ -222,6 +224,8 @@ IF (BUILD_SHARED_LIBS OR BUILD_STATIC_LIBS)
     RUNTIME DESTINATION ${RUNTIME_DIR}
   )
 ENDIF ()
+
+set_target_properties(IlmImf_static PROPERTIES FOLDER "ilmimf")
 
 INSTALL ( 
   FILES 
