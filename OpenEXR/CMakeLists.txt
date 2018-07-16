@@ -144,6 +144,7 @@ SET_TARGET_PROPERTIES ( IlmImfUtil
 ##########################
 ADD_SUBDIRECTORY ( IlmImfExamples )
 
+set_target_properties(IlmImfExamples PROPERTIES FOLDER "examples")
   
 ##########################
 # Tests
@@ -152,6 +153,9 @@ ADD_SUBDIRECTORY ( IlmImfTest )
 ADD_SUBDIRECTORY ( IlmImfUtilTest )
 ADD_SUBDIRECTORY ( IlmImfFuzzTest )
 
+set_target_properties(IlmImfTest PROPERTIES FOLDER "tests")
+set_target_properties(exrheader PROPERTIES FOLDER "tests")
+set_target_properties(IlmImfFuzzTest PROPERTIES FOLDER "tests")
 
 ##########################
 # Binaries / Utilities
@@ -164,6 +168,13 @@ ADD_SUBDIRECTORY ( exrenvmap )
 ADD_SUBDIRECTORY ( exrmultiview )
 ADD_SUBDIRECTORY ( exrmultipart )
 
+set_target_properties(exrheader PROPERTIES FOLDER "util")
+set_target_properties(exrmaketiled PROPERTIES FOLDER "util")
+set_target_properties(exrstdattr PROPERTIES FOLDER "util")
+set_target_properties(exrmakepreview PROPERTIES FOLDER "util")
+set_target_properties(exrenvmap PROPERTIES FOLDER "util")
+set_target_properties(exrmultiview PROPERTIES FOLDER "util")
+set_target_properties(exrmultipart PROPERTIES FOLDER "util")
 
 ##########################
 # Installation
